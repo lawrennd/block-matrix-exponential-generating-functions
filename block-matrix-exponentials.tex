@@ -812,9 +812,9 @@ We consider the following test cases:
 \toprule
 $n$ & Block expm & Nested quad (50 pts) & Nested quad (100 pts) \\
 \midrule
-10 & $1.2 \times 10^{-15}$ & $3.4 \times 10^{-9}$ & $1.1 \times 10^{-11}$ \\
-50 & $2.7 \times 10^{-15}$ & $5.2 \times 10^{-9}$ & $2.3 \times 10^{-11}$ \\
-100 & $4.1 \times 10^{-15}$ & $8.7 \times 10^{-9}$ & $4.5 \times 10^{-11}$ \\
+10 &  &  &  \\
+50 &  &  &  \\
+100 &  &  &  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -887,9 +887,9 @@ $n$ & Block expm & Nested quad (50 pts) & Nested quad (100 pts) \\
 \toprule
 Entry & Analytic & Block expm & Finite diff ($h=10^{-5}$) \\
 \midrule
-$g_{11}$ & 0.24506 & 0.24506 & 0.24501 \\
-$g_{12}$ & 0.00321 & 0.00321 & 0.00319 \\
-$g_{33}$ & 0.91203 & 0.91203 & 0.91198 \\
+$g_{11}$ &  &  &  \\
+$g_{12}$ &  &  &  \\
+$g_{33}$ &  &  &  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -939,7 +939,7 @@ This provides an algebraic perspective on path integrals: the ``sum over paths''
 
 \paragraph{Matrix analysis.} Higham~\cite{higham2008functions} developed the $4n \times 4n$ construction for numerical purposes (computing Fr\'echet derivatives for condition number estimation), without emphasizing a physical interpretation. We make explicit the connection to time ordering and quantum perturbation theory.
 
-\paragraph{Quantum field theory.} Dyson~\cite{1949radiationdyson} introduced time-ordered exponentials, but the connection to block matrix structure appears not to have been emphasized in the literature. We show how Dyson's time-ordered products have a natural realization via block exponentials.
+\paragraph{Quantum field theory.} Dyson~\cite{Dyson-radiation49} introduced time-ordered exponentials, but the connection to block matrix structure appears not to have been emphasized in the literature. We show how Dyson's time-ordered products have a natural realization via block exponentials.
 
 \paragraph{Information geometry.} The connection between Fisher information and Kubo--Mori metrics is known~\cite{petz2008introduction}, but computational methods typically use finite differences or Monte Carlo. The block exponential provides a direct, stable approach.
 
@@ -966,15 +966,15 @@ This provides an algebraic perspective on path integrals: the ``sum over paths''
 \subsection{Software and Reproducibility}
 \label{subsec:software}
 
-All code for the numerical experiments is available at:
+All code for the numerical experiments will be available at:
 \begin{center}
-\url{https://github.com/username/block-exponentials}
+\url{https://github.com/lawrennd/qig-code}
 \end{center}
-The repository includes:
+The repository will include:
 \begin{itemize}
 \item Python implementations of all block constructions,
 \item Jupyter notebooks reproducing all figures and tables,
-\item A pip-installable package: \texttt{pip install block-frechet}.
+\item A pip-installable package: \texttt{pip install qig-code}.
 \end{itemize}
 
 \section{Conclusions}
