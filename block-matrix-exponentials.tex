@@ -195,6 +195,7 @@ Najfeld and Havel~\cite{najfeld1995derivatives} introduced a $3n \times 3n$ bloc
 
 \paragraph{Dyson series and time ordering.}
 Dyson's original work~\cite{Dyson-radiation49} introduced time-ordered exponentials in quantum electrodynamics. Subsequent developments in quantum field theory~\cite{peskin1995introduction} formalized time-ordering operators $\mathcal{T}$ for computing perturbative expansions. We show how block exponentials provide an algebraic realization of time ordering, with different block topologies corresponding to different ordering prescriptions.
+For a brief orientation on how this perspective relates to lattice discretizations, Gaussian/free theories, and the origin of Feynman-diagram expansions, see \Cref{subsec:lattice_qft_feynman}.
 
 \paragraph{Quantum exponential families and Fisher information.}
 The information-geometric structure of quantum state spaces has been studied extensively~\cite{amari2016information,petz1996monotone}. The connection between quantum Fisher information and the Kubo--Mori inner product is well known~\cite{petz2008introduction}. We demonstrate how block exponential constructions provide a practical computational method for these quantities.
@@ -933,6 +934,20 @@ The block exponential provides a \emph{finite-dimensional algebraic model} of th
 \end{itemize}
 
 This provides an algebraic perspective on path integrals: the ``sum over paths'' emerges naturally from the exponential series, not as a separate construction.
+
+\subsection{Relation to Lattice Models, Gaussian Theories, and Feynman Diagrams}
+\label{subsec:lattice_qft_feynman}
+
+Readers coming from quantum field theory (QFT) or statistical field theory may wonder how the present ``sum over paths'' viewpoint relates to lattice discretizations, Gaussian (free) field theories, and Feynman diagrams. A useful distinction is that our block-exponential constructions primarily address \emph{time ordering of operator insertions} (Dyson-type expansions), whereas lattice/continuum questions concern the \emph{state space} on which a propagator acts. The two viewpoints are complementary and can be combined.
+
+\paragraph{Discrete state spaces (graphs/lattices).}
+When the underlying dynamics is defined on a discrete set of states, the generator (or Hamiltonian) is naturally a matrix whose sparsity pattern encodes allowed transitions. In particular, if one takes $H$ to be (a shift of) an adjacency matrix $A$ or a graph Laplacian $L$, then kernels such as $\exp(tA)$ or $\exp(-tL)$ can be interpreted as discrete-time/continuous-time propagation operators on a graph, and their entries admit standard walk/path expansions. In this sense, matrix exponentials already provide a \emph{lattice} (discrete) propagator.
+
+\paragraph{Hermitian matrices and complex-weighted edges.}
+Allowing $H$ to be Hermitian naturally accommodates complex-valued couplings (phases) while retaining real spectra and unitary real-time evolution $\exp(-itH)$. From a graph perspective, this corresponds to complex-weighted edges with conjugate symmetry, as in tight-binding Hamiltonians, discrete quantum walks, or lattice models with a (discrete) gauge connection. The block-exponential viewpoint remains unchanged: off-diagonal blocks still generate time-ordered insertions, now interpreted as operator insertions along unitary propagation.
+
+\paragraph{Gaussian/free theories versus full diagrammatics.}
+In QFT, a \emph{Gaussian} (free) theory is governed by a quadratic action and is completely characterized by a propagator (Green's function). On a lattice, this propagator is the inverse (or heat kernel) of a discrete operator built from the lattice adjacency/Laplacian, i.e., it is again a matrix kernel. Diagrammatic expansions become richer once one adds \emph{interactions} and expands perturbatively around the Gaussian measure: Wick contractions in the Gaussian baseline supply propagator lines, while the interaction terms generate vertices and the usual Feynman-diagram bookkeeping. Finally, the familiar continuum expressions arise after an additional scaling/continuum limit (lattice spacing $\to 0$) together with the attendant analytic issues (regularization/renormalization).
 
 \subsection{Relation to Existing Work}
 \label{subsec:relation_existing_work}
